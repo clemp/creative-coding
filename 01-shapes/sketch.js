@@ -14,12 +14,12 @@ var theta;
 
 function setup() {
   c = createCanvas(480, 480); // Set your canvas width, height
-
+  noStroke();
   // Set rotation equal to PI/4 (45 degrees)
   theta = PI/4;
 
   // Number of tiles (across and down) within your canvas
-  var N_ACROSS = 6;
+  var N_ACROSS = 8;
 
   w = width/N_ACROSS;
 
@@ -49,8 +49,8 @@ function draw() {
 
       // Draw tile borders
       push();
-        stroke(0);
-        noStroke();
+        // stroke(0);
+        // noStroke();
         noFill();
         rect(i*w, j*w, w-1, w-1);
       pop();
@@ -71,19 +71,22 @@ function draw() {
         rectMode(CENTER);
 
         fill(73, 141, 161);
-        noStroke();
+        // noStroke();
 
         rect(0, 0, rw, rw);
         ellipse(0, 0, rw);
         line(0, 0, r, 0);
         line(0, 0, 0, r);
+      pop();
 
-        // Create point that sits where the square forms a right angle
+      // Create point that sits where the square forms a right angle
+      push();
+        translate(tileCenter.x, tileCenter.y);
+
         var px = sqrt(2) * r * cos(theta);
         var py = sqrt(2) * r * sin(theta);
-        line(0, 0, px, py);
-        fill(255, 0, 255, 25);
-        // line(0, 0, rw, 0);
+
+        ellipse(i*w, j*w, 1);
       pop();
 
       // Duplicate first square and rotate PI/4 (45) degrees
@@ -93,36 +96,79 @@ function draw() {
         rotate(theta);
 
         fill(73, 141, 161);
-        noStroke();
+        // noStroke();
 
         rect(0, 0, rw, rw);
+      pop();
+
+      // Create circle that sits within inner rectangles
+      push();
+        translate(tileCenter.x, tileCenter.y);
+        rectMode(CENTER);
+
+        fill(255, 212, 111);
+
         ellipse(0, 0, rw);
-        // line(0, 0, r, 0);
-        // line(0, 0, 0, r);
+      pop();
+
+      // Inscribe four inner circles
+      push();
+        translate(tileCenter.x, tileCenter.y);
+
+        // Four circles inner fill
+        noStroke();
+        fill(73, 141, 161);
+
+        rotate(0);
+        ellipse(0, r/2, r);
+
+        rotate(PI/2);
+        ellipse(0, r/2, r);
+
+        rotate(PI);
+        ellipse(0, r/2, r);
+
+        rotate(3*PI/2);
+        ellipse(0, r/2, r);
+
+        // Four circles outer stroke
+        noFill();
+        stroke(255, 130, 111);
+        strokeWeight(2);
+
+        rotate(0);
+        ellipse(0, r/2, r);
+
+        rotate(PI/2);
+        ellipse(0, r/2, r);
+
+        rotate(PI);
+        ellipse(0, r/2, r);
+
+        rotate(3*PI/2);
+        ellipse(0, r/2, r);
+      pop();
+
+      // Dot in tile center
+      push();
+        translate(tileCenter.x, tileCenter.y);
+        rectMode(CENTER);
+        rotate(PI/4);
+        fill(0);
+        // noStroke();
+        // rect(0, 0, rw, rw);
+        // ellipse(0, 0, 5);
 
         // Create point that sits where the square forms a right angle
         var px = sqrt(2) * r * cos(theta);
         var py = sqrt(2) * r * sin(theta);
         // line(0, 0, px, py);
-        fill(255, 0, 255, 25);
-
-        // Create circle that encloses square
-        // noFill();
-        // stroke(0);
-        // ellipse(0, 0, sqrt(2) * rw);
-
+        // fill(255, 0, 255, 25);
+        // line(0, 0, px, py);
+        // ellipse(px, py, 5);
       pop();
 
-      // Dot in tile center
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   rectMode(CENTER);
-      //   rotate(PI/4);
-      //   fill(0);
-      //   // noStroke();
-      //   // rect(0, 0, rw, rw);
-      //   ellipse(0, 0, 5);
-      // pop();
+
 
       // Help yourself with by printing some variables to the console log
       if (errorLog < 3) {
@@ -131,9 +177,8 @@ function draw() {
         console.log("rw: ", rw);
         console.log("rw * (1 + sqrt(2)): ", rw * (1 + sqrt(2)));
         console.log("w/2: ", w/2);
-        console.log("r_test: ", r_test);
         console.log("theta: ", theta, " PI/4: ", PI/4);
-        console.log("cr: ", cr);
+        console.log("rw/2: ", rw/2, ", px: ", px);
         errorLog += 1;
       }
     }
