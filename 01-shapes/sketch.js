@@ -9,6 +9,9 @@ var errorLog = 0;
 var phi = 1.61803;
 var theta;
 
+// Color palette:
+// http://paletton.com/#uid=33o0u0klllli7wIjJqNmXfTozar
+
 function setup() {
   c = createCanvas(480, 480); // Set your canvas width, height
 
@@ -25,7 +28,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(255, 212, 111);
 
   // Create grid (each row in a column gets created before moving to the next column)
   for ( var i = 0; i < columns;i++) {
@@ -54,7 +57,7 @@ function draw() {
       push();
         translate(tileCenter.x, tileCenter.y);
 
-        fill(255, 0, 255);
+        fill(255, 130, 111);
         noStroke();
 
         ellipse(0, 0, sqrt(2) * rw);
@@ -65,7 +68,7 @@ function draw() {
         translate(tileCenter.x, tileCenter.y);
         rectMode(CENTER);
 
-        fill(255, 255, 0);
+        fill(73, 141, 161);
         noStroke();
 
         rect(0, 0, rw, rw);
@@ -87,7 +90,7 @@ function draw() {
         rectMode(CENTER);
         rotate(theta);
 
-        fill(255, 255, 0);
+        fill(73, 141, 161);
         noStroke();
 
         rect(0, 0, rw, rw);
