@@ -19,7 +19,7 @@ function setup() {
   theta = PI/4;
 
   // Number of tiles (across and down) within your canvas
-  var N_ACROSS = 4;
+  var N_ACROSS = 6;
 
   w = width/N_ACROSS;
 
@@ -40,7 +40,9 @@ function draw() {
       // Geometry
 
       // Set variables to help design your inside shape
-      var r = 42;
+
+      // Rectangle width such that diameter of circle is equal to tile width
+      var r = w/(2*sqrt(2));
 
       // Set width of inside square
       var rw = 2 * r;
@@ -112,15 +114,15 @@ function draw() {
       pop();
 
       // Dot in tile center
-      push();
-        translate(tileCenter.x, tileCenter.y);
-        rectMode(CENTER);
-        rotate(PI/4);
-        fill(0);
-        // noStroke();
-        // rect(0, 0, rw, rw);
-        ellipse(0, 0, 5);
-      pop();
+      // push();
+      //   translate(tileCenter.x, tileCenter.y);
+      //   rectMode(CENTER);
+      //   rotate(PI/4);
+      //   fill(0);
+      //   // noStroke();
+      //   // rect(0, 0, rw, rw);
+      //   ellipse(0, 0, 5);
+      // pop();
 
       // Help yourself with by printing some variables to the console log
       if (errorLog < 3) {
@@ -129,8 +131,9 @@ function draw() {
         console.log("rw: ", rw);
         console.log("rw * (1 + sqrt(2)): ", rw * (1 + sqrt(2)));
         console.log("w/2: ", w/2);
+        console.log("r_test: ", r_test);
         console.log("theta: ", theta, " PI/4: ", PI/4);
-
+        console.log("cr: ", cr);
         errorLog += 1;
       }
     }
