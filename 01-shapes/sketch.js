@@ -119,10 +119,6 @@ function draw() {
         ellipse(0, 0, 5);
       pop();
 
-
-
-
-
       // Help yourself with by printing some variables to the console log
       if (errorLog < 3) {
         console.log("tileCenter.x: ", tileCenter.x, " tileCenter.y: ", tileCenter.y);
@@ -132,62 +128,8 @@ function draw() {
         console.log("w/2: ", w/2);
         console.log("theta: ", theta, " PI/4: ", PI/4);
 
-
-
         errorLog += 1;
       }
-
-
-      // top
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   rectMode(CENTER);
-      //   rect(0, -r/2, -r/3, r/5);
-      // pop();
-
-      // bottom
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   rectMode(CENTER);
-      //   rect(0, r/2, r/3, r/5);
-      // pop();
-      //
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   rectMode(CENTER);
-      //   rect(-r/2, r/2, r/2, r/5);
-      // pop();
-      //
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   rectMode(CENTER);
-      //   rect(r/2, r/2, r/2, r/5);
-      // pop();
-
-
-
-
-
-
-
-
-      //
-      // fill(255);
-      // ellipse(tileCenter.x, tileCenter.y, r, r);
-
-
-      // ellipse(tileCenter.x - r, tileCenter.y, r, r);
-      //
-      // push();
-      //   translate(tileCenter.x, tileCenter.y);
-      //   arc(0, 0, 60, 60, 0, HALF_PI);
-      // pop();
-
-      // ellipse(i*w, j*w, r * 2, r * 2);
-
-
-
-
     }
   }
 }
