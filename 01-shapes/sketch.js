@@ -13,13 +13,13 @@ var theta;
 // http://paletton.com/#uid=33o0u0klllli7wIjJqNmXfTozar
 
 function setup() {
-  c = createCanvas(480, 480); // Set your canvas width, height
+  c = createCanvas(650, 400); // Set your canvas width, height
   noStroke();
   // Set rotation equal to PI/4 (45 degrees)
   theta = PI/4;
 
   // Number of tiles (across and down) within your canvas
-  var N_ACROSS = 8;
+  var N_ACROSS = 15;
 
   w = width/N_ACROSS;
 
@@ -48,12 +48,12 @@ function draw() {
       var rw = 2 * r;
 
       // Draw tile borders
-      push();
-        // stroke(0);
-        // noStroke();
-        noFill();
-        rect(i*w, j*w, w-1, w-1);
-      pop();
+      // push();
+      //   // stroke(0);
+      //   // noStroke();
+      //   noFill();
+      //   rect(i*w, j*w, w-1, w-1);
+      // pop();
 
       // Create circle that encloses square
       push();
