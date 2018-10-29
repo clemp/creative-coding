@@ -9,17 +9,26 @@ var errorLog = 0;
 var phi = 1.61803;
 var theta;
 
+var colors = [];
+
+
 // Color palette:
 // http://paletton.com/#uid=33o0u0klllli7wIjJqNmXfTozar
 
 function setup() {
   c = createCanvas(650, 400); // Set your canvas width, height
+
+  colors[0] = color(41, 82,109); // green
+  colors[1] = color(51, 54,118); // indigo
+  colors[2] = color(170,140, 57); // gold
+  colors[3] = color(77,130,165); // siena
+
   noStroke();
   // Set rotation equal to PI/4 (45 degrees)
   theta = PI/4;
 
   // Number of tiles (across and down) within your canvas
-  var N_ACROSS = 15;
+  var N_ACROSS = 12;
 
   w = width/N_ACROSS;
 
@@ -28,7 +37,7 @@ function setup() {
 }
 
 function draw() {
-  background(255, 212, 111);
+  background(colors[0]);
 
   // Create grid (each row in a column gets created before moving to the next column)
   for ( var i = 0; i < columns;i++) {
@@ -59,7 +68,7 @@ function draw() {
       push();
         translate(tileCenter.x, tileCenter.y);
 
-        fill(255, 130, 111);
+        fill(colors[3]);
         noStroke();
 
         ellipse(0, 0, sqrt(2) * rw);
@@ -70,7 +79,7 @@ function draw() {
         translate(tileCenter.x, tileCenter.y);
         rectMode(CENTER);
 
-        fill(73, 141, 161);
+        fill(colors[1]);
         // noStroke();
 
         rect(0, 0, rw, rw);
@@ -95,7 +104,7 @@ function draw() {
         rectMode(CENTER);
         rotate(theta);
 
-        fill(73, 141, 161);
+        fill(colors[1]);
         // noStroke();
 
         rect(0, 0, rw, rw);
@@ -106,7 +115,7 @@ function draw() {
         translate(tileCenter.x, tileCenter.y);
         rectMode(CENTER);
 
-        fill(255, 212, 111);
+        fill(colors[0]);
 
         ellipse(0, 0, rw);
       pop();
@@ -117,7 +126,7 @@ function draw() {
 
         // Four circles inner fill
         noStroke();
-        fill(73, 141, 161);
+        fill(colors[3]);
 
         rotate(0);
         ellipse(0, r/2, r);
@@ -133,7 +142,7 @@ function draw() {
 
         // Four circles outer stroke
         noFill();
-        stroke(255, 130, 111);
+        stroke(colors[2]);
         strokeWeight(2);
 
         rotate(0);
