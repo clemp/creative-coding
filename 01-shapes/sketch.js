@@ -19,7 +19,7 @@ function setup() {
   theta = PI/4;
 
   // Number of tiles (across and down) within your canvas
-  var N_ACROSS = 15;
+  var N_ACROSS = 4;
 
   w = width/N_ACROSS;
 
