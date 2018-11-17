@@ -60,7 +60,7 @@ function draw() {
         // rectMode(CENTER);
         // rotate(PI/4);
         // rect(0, 0, w/sqrt(2), w/sqrt(2));
-        polygon(0, 0, 45, 8);
+        polygon(0, 0, w/2, 8);
       pop();
 
       // Dot in tile center
