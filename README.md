@@ -1,3 +1,8 @@
+# Creative Coding
+Principles of geometric pattern design using Processing. Learn to use math, art, and programming to explore a world of pattern and beauty.
+
+This repository is a place for me to share examples and tutorials so that you can learn, teach, and appreciate the beauty of simple complexity.
+
 ## Processing Resources
 **p5.js Web Editor** - https://editor.p5js.org/
 
