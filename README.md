@@ -4,11 +4,12 @@ Principles of geometric pattern design using Processing. Learn to use math, art,
 This repository is a place for me to share examples and tutorials so that you can learn, teach, and appreciate the beauty of simple complexity.
 
 ## Examples of Pattern Design
+**[Islamic Tiling](https://commons.wikimedia.org/wiki/File:Navajo_-_blanket_-_Google_Art_Project.jpg)** (Ceiling in [Tomb of Hafez](https://en.wikipedia.org/wiki/Tomb_of_Hafez) in Shiraz, Iran)
+![Islamic Tiling](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/640px-Roof_hafez_tomb.jpg)
+
 **[Navajo Blanket](https://commons.wikimedia.org/wiki/File:Navajo_-_blanket_-_Google_Art_Project.jpg)** (courtesy of Denver Art Museum)
 ![Navajo Blanket](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Navajo_-_blanket_-_Google_Art_Project.jpg/359px-Navajo_-_blanket_-_Google_Art_Project.jpg)
 
-**[Islamic Tiling](https://commons.wikimedia.org/wiki/File:Navajo_-_blanket_-_Google_Art_Project.jpg)** (Ceiling in [Tomb of Hafez](https://en.wikipedia.org/wiki/Tomb_of_Hafez) in Shiraz, Iran)
-![Islamic Tiling](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roof_hafez_tomb.jpg/640px-Roof_hafez_tomb.jpg)
 
 ## Processing Resources
 **p5.js Web Editor** - https://editor.p5js.org/
