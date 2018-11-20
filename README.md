@@ -4,7 +4,7 @@ Principles of geometric pattern design using Processing. Learn to use math, art,
 This repository is a place for me to share examples and tutorials so that you can learn, teach, and appreciate the beauty of simple complexity.
 
 ## Examples of Pattern Design
-**Navajo Blanket** (courtesy of Denver Art Museum)
+**[Navajo Blanket](https://commons.wikimedia.org/wiki/File:Navajo_-_blanket_-_Google_Art_Project.jpg)** (courtesy of Denver Art Museum)
 ![Navajo Blanket](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Navajo_-_blanket_-_Google_Art_Project.jpg/359px-Navajo_-_blanket_-_Google_Art_Project.jpg)
 
 ## Processing Resources
