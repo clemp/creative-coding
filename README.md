@@ -13,6 +13,11 @@ This repository is a place for me to share examples and tutorials so that you ca
 
 ![Navajo Blanket](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Navajo_-_blanket_-_Google_Art_Project.jpg/359px-Navajo_-_blanket_-_Google_Art_Project.jpg)
 
+**[Indian Carpet](https://upload.wikimedia.org/wikipedia/commons/c/c0/Millefleur_%27Star-Lattice%27_carpet%2C_17th-early_18th_century_Mughal_India%2C_Christie%27s.jpg)** (courtesy of Christie's)
+
+![Indian Carpet](https://upload.wikimedia.org/wikipedia/commons/c/c0/Millefleur_%27Star-Lattice%27_carpet%2C_17th-early_18th_century_Mughal_India%2C_Christie%27s.jpg)
+
+
 
 ## Processing Resources
 **p5.js Web Editor** - https://editor.p5js.org/
