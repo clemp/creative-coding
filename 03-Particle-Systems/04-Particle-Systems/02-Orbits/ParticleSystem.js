@@ -16,42 +16,35 @@ class ParticleSystem {
     for (var i = 0; i < this.n; i++) {
       let pos = this.origin.copy();
       pos.add(change);
-      change.mult(2);
+      change.mult(1.1);
       // let pos = center.add(change.mult(i + 1));
       this.particles.push(new Particle(pos));
     }
   }
   // Create motion with physics functions.
   attractOrbit(particle) {
-    // console.log("test1")
-    // console.log(get_distance(this.origin, particle.position));
-    // if (get_distance(this.origin, particle.position) <= 200) {
-      // console.log("test2");
-      // let force = createVector(1, 0);
-      let force = centripetalForce(this.origin, particle);
-      particle.applyForce(force);
-      console.log(force);
-      // particle.applyForce(centripetalForce(this.origin, particle));
-    // }
-  }
-  // Visualize the system.
-  showParticles() {
-    for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].show();
-    }
+    // apply centripetal force to a particle
+    let force = centripetalForce(this.origin, particle);
+    particle.applyForce(force);
   }
 
+  // Show something at the Particle System origin
   showOrigin() {
     fill(255);
     ellipse(this.origin.x, this.origin.y, this.mass, this.mass);
+  }
+
+  connectParticle(particle) {
+    stroke(76, 173, 173, 25);
+    line(this.origin.x, this.origin.y, particle.position.x, particle.position.y);
   }
   // Update each iteration.
   update() {
     // For each particle..
     for (var i = 0; i < this.particles.length; i++) {
-      // console.log("test");
       this.attractOrbit(this.particles[i]); // Calculate orbital attraction.
       this.particles[i].update();
+      this.connectParticle(this.particles[i]); // create line from origin to particle
       this.particles[i].show();
     }
     this.iterations += 1;

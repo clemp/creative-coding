@@ -1,9 +1,17 @@
 class Particle {
   constructor(_position) {
-      this.position = _position.copy();
-      this.velocity = createVector(0.2, 3);
-      this.acceleration = createVector(0, 0);
-      this.mass = 15;
+      this.position = _position.copy(); // keep this the same
+      this.velocity = createVector(0, 1); // what happens when you change initial velocity?
+      this.speed = 2; // try different speed
+      this.velocity.mult(this.speed); // keep this the same.
+      this.acceleration = createVector(0, 0); // keep this the same
+      this.mass = 25; // change the mass size
+  }
+  // Function to apply a new force to the particle.
+  applyForce(force) {
+    // f = ma -> f/m = a
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
   }
 
   update() {
@@ -12,15 +20,13 @@ class Particle {
     this.acceleration.mult(0);
   }
 
-  applyForce(force) {
-    // f = ma -> f/m = a
-    let f = p5.Vector.div(force, this.mass);
-    this.acceleration.add(f);
-  }
-
   show() {
     // noStroke();
-    fill(255);
+    stroke(0);
+
+    fill(255); // change this to change particle color
     ellipse(this.position.x, this.position.y, this.mass, this.mass);
+    ellipse(this.position.x, this.position.y, 2, 2);
+
   }
 }

@@ -1,22 +1,29 @@
 let systems = [];
 
 function setup() {
-  createCanvas(850,850);
-  frameRate(34);
+  createCanvas(windowWidth, windowHeight);
+  // frameRate(30);
   background(0);
 }
 
 function draw() {
-  // background(0, 10);
-  fill(255);
+  background(0);
+  // fill(255);
   for (i = 0; i < systems.length; i++) {
+    systems[i].showOrigin(); // comment/uncomment to show origin center
     systems[i].update();
-    // systems[i].showOrigin();
-    systems[i].showParticles();
   }
 }
 
 function mousePressed() {
-  systems.push(new ParticleSystem(mouseX, mouseY, 40, 6));
+  // let num_particles = int(random(1, 30));
+  systems.push(new ParticleSystem(mouseX, mouseY, 40, 1)); // try generating a random number of particles
   systems[systems.length - 1].generate();
+}
+
+// press "s" key to save an image
+function keyTyped() {
+  if (key == 's') {
+    save('particle-systems-04-02-01.png')
+  }
 }
