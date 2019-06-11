@@ -17,7 +17,7 @@ function draw() {
 
 function mousePressed() {
   // let num_particles = int(random(1, 30));
-  systems.push(new ParticleSystem(mouseX, mouseY, 40, 1)); // try generating a random number of particles
+  systems.push(new ParticleSystem(mouseX, mouseY, 100, 2)); // try generating a random number of particles
   systems[systems.length - 1].generate();
 }
 

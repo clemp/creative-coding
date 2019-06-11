@@ -10,12 +10,12 @@ class ParticleSystem {
   // Initialize with generate function.
   generate() {
     let dist = this.mass + 20;
-    let theta = 25;
+    let theta = 0;
     let change = createVector(dist, theta);
     // Create the initial state (Step 0) of all particles in the system.
     for (var i = 0; i < this.n; i++) {
       let pos = this.origin.copy();
-      pos.add(change);
+      // pos.add(change);
       // change.mult(1.1);
       // let pos = center.add(change.mult(i + 1));
       this.particles.push(new Particle(pos));
@@ -25,8 +25,9 @@ class ParticleSystem {
   attract(particle) {
     let force = p5.Vector.sub(this.origin, particle.position);
     let distance = force.mag();
+    distance = constrain(distance, 1, 12);
     force.normalize();
-    let strength = (200 * particle.mass) / (distance * distance); // change strength for different attraction behavior
+    let strength = (2 * particle.mass) / (distance * distance); // change strength for different attraction behavior
     force.mult(strength);
     return force;
   }
@@ -51,10 +52,10 @@ class ParticleSystem {
   update() {
     // For each particle..
     for (var i = 0; i < this.particles.length; i++) {
-      // let distance_from_origin = p5.Vectors
-      let force = this.attract(this.particles[i]);
-      this.particles[i].applyForce(force);
-      // this.attractOrbit(this.particles[i]); // Calculate orbital attraction.
+      if (get_distance(this.origin, this.particles[i].position) > 100) {
+        let force = this.attract(this.particles[i]);
+        this.particles[i].applyForce(force);
+      }
       this.particles[i].update();
       this.connectParticle(this.particles[i]); // create line from origin to particle
       this.particles[i].show();

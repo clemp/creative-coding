@@ -1,7 +1,8 @@
 class Particle {
   constructor(_position) {
       this.position = _position.copy(); // keep this the same
-      this.velocity = createVector(0, 1); // what happens when you change initial velocity?
+      // this.velocity = createVector(1, 0); // what happens when you change initial velocity?
+      this.velocity = p5.Vector.random2D();
       this.speed = 2; // try different speed
       this.velocity.mult(this.speed); // keep this the same.
       this.acceleration = createVector(0, 0); // keep this the same
@@ -26,7 +27,7 @@ class Particle {
 
     fill(255); // change this to change particle color
     ellipse(this.position.x, this.position.y, this.mass, this.mass);
-    ellipse(this.position.x, this.position.y, 2, 2);
+    // ellipse(this.position.x, this.position.y, 2, 2);
 
   }
 }
